@@ -1,5 +1,5 @@
 # Estimating total species abundance trends with spatial synchrony 
-This tool is a Bayesian multivariate state-space (MARSS) model that estimates total species abundance over time using spatial synchrony. The model sums abundance trends across many populations within a species to calculate a single total abundance. Spatial synchrony can estimate trends during unsampled time periods for populations using information from nearby sampled populations. Spatial synchrony can also be toggled off. Observation error of survey methods are also estimated to inform biodiversity monitoring. This tool is intended to be generalizable for most vertebrates, which are usually counted at an annual resolution. We demonstrate the practicality this tool in several examples of marine vertebrates.
+This tool is a Bayesian multivariate state-space (MARSS) model that estimates total species abundance over time using spatial synchrony. The model sums abundance trends across many populations within a species to calculate a single total abundance. Spatial synchrony can estimate trends during unsampled time periods for populations using information from nearby sampled populations. Spatial synchrony can also be toggled off. Observation error of survey methods are also estimated to inform biodiversity monitoring. This tool is intended to be generalizable for most vertebrates, which are usually counted at an annual resolution. We demonstrate the practicality this tool for all pinniped and sea turtle species with adequate data.
 
 ## File Descriptions
 ### Abundance Data
@@ -14,7 +14,7 @@ Global database of marine vertebrate time series for pinnipeds (LINK) and sea tu
 - DOI: DOI of source
 - Link: Url link to source
 - Common.Name: Species common name
-- Subspecies: Scientific name, identified to subspecies level when relevant
+- Subspecies: Scientific name, identified to subspecies level when relevant.
 - Family: Taxonomic family
 - Location.of.population: Location of abundance counts
 - Indiv.pop.map: Location of abundance counts for model input, similar to Location.of.population
@@ -47,6 +47,8 @@ An in-depth description about the statistical underpinnings of the multivariate 
 https://nwfsc-timeseries.github.io/MARSS-Manual/chap-marss.html
 
 We model abundances as random walks in log space. Process variance is independent and unique by location/populaton with an independent process hypothesis, or characterized as a Gaussian process covariance function of ocean distance with a spatial synchrony hypothesis. The observation covariance matrix is diagonal, with variances that differ by sampling method category. 
+
+Total species abundance is calculated as the sum of individual population abundances. In the pinniped examples, we calculate total abundance by subspecies when possible. 
 
 ### Bayesian
 Scarce ecological data, some parameters will be difficult to estimate in a likelihood framework. The priors in the Stan examples are based on pinnipeds.
