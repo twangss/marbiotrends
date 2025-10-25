@@ -26,14 +26,21 @@ Global database of marine vertebrate time series for pinnipeds (LINK) and sea tu
 - Sampling.method: Sampling method categories for estimation of observation error parameters
 - yXXXX: Year XXXX, Years of abundance counts 
 
+### Distance Data for Spatial Synchrony
+Distances among locations for example taxa are found at DISTANCE_LINK. Distance are calculated as lengths of minimum contiguous ocean paths using CODE LINK prior to model fitting. 
 
+### Model Files
+Data pre-pocessing and model fitting code found at MODEL_LINK. Model is in Stan and found in the Stan folder. See Model description section below to get started. Model output processing files for reporting species abundance, overall abundance growth rates, observation error variability by sampling method and species, spatial synchrony relationship refer to model output files here.
+
+
+
+## Model Description (Bayesian MARSS)
 # Setting up the model
 Download CmdStanR and follow the help guide:
 https://mc-stan.org/cmdstanr/articles/cmdstanr.html
 
 Stan files are located in the stan folder
 
-# Model (Bayesian MARSS)
 ### Why state-space?
 SSMs differentiate process and observation error, which allows estimation of unobserved states while simultaneously accounting for sampling uncertainty. In the context of population dynamics, process error refers to true changes in abundance due to birth, deaths, immigration, emigrations, while observation error refers to randomness in surveys sampling abundance. This separation of process and observation error may reduce spurious interpretations of extinction risk, which should be based only on process variability
 
