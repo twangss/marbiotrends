@@ -1,8 +1,30 @@
-Estimating total species abundance trends with spatial synchrony 
+# Estimating total species abundance trends with spatial synchrony 
 This tool is a Bayesian multivariate state-space (MARSS) model that incorporates spatial synchrony while estimating total species abundance over time. The model sums abundance trends across many populations within a species to calculate a single total abundance. Spatial synchrony can estimate trends during unsampled time periods for populations using information from nearby sampled populations. Observation error of survey methods are also estimated to inform biodiversity monitoring. This tool is intended to be generalizable for most vertebrates, which are usually counted at an annual resolution. We demonstrate the practicality this tool in several examples of marine vertebrates.
 
-# File Descriptions
-## Data
+## File Descriptions
+### Abundance Data
+Global database of marine vertebrate time series for pinnipeds (LINK) and sea turtles (LINK). The data is a compilation from a literature review of marine vertebrate abundance time series by location. Data is structured in a wide format, in other words, each species location with counts is its own row. The first columns are metadata and characteristics of the data and the remaining columns are the abundance counts. 
+#### Abundance Data Column Description
+TID: time series identification number assigned
+Author: Source author
+Report.Year: Source year
+Title: Source title
+Publication: Source publication
+Type: Publication type
+DOI: DOI of source
+Link: Url link to source
+Common.Name: Species common name
+Subspecies: Scientific name, identified to subspecies level when relevant
+Family: Taxonomic family
+Location.of.population: Location of abundance counts
+Indiv.pop.map: Location of abundance counts for model input, similar to Location.of.population
+Indiv.sum: Indicator if time series is included in total species abundance calculation = 1, necessary to avoid double counting locations where there are multiple time series
+Latitude/Longitude: Geographic coordinates
+Use: For use in model
+Units_clean: Categories of abundance units 
+Scaling: Scalar life-stage conversion factors to standardize abundances of different units into a single unit for each species
+Sampling.method: Sampling method categories for estimation of observation error parameters
+yXXXX: Year XXXX, Years of abundance counts 
 
 
 # Setting up the model
