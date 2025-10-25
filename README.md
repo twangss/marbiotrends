@@ -1,10 +1,17 @@
+Estimating total species abundance trends with spatial synchrony 
+This tool is a Bayesian multivariate state-space (MARSS) model that incorporates spatial synchrony while estimating total species abundance over time. The model sums abundance trends across many populations within a species to calculate a single total abundance. Spatial synchrony can estimate trends during unsampled time periods for populations using information from nearby sampled populations. Observation error of survey methods are also estimated to inform biodiversity monitoring. This tool is intended to be generalizable for most vertebrates, which are usually counted at an annual resolution. We demonstrate the practicality this tool in several examples of marine vertebrates.
+
+# File Descriptions
+## Data
+
+
 # Setting up the model
 Download CmdStanR and follow the help guide:
 https://mc-stan.org/cmdstanr/articles/cmdstanr.html
 
 Stan files are located in the stan folder
 
-# Model (MARSS in a Bayesian framework)
+# Model (Bayesian MARSS)
 ### Why state-space?
 SSMs differentiate process and observation error, which allows estimation of unobserved states while simultaneously accounting for sampling uncertainty. In the context of population dynamics, process error refers to true changes in abundance due to birth, deaths, immigration, emigrations, while observation error refers to randomness in surveys sampling abundance. This separation of process and observation error may reduce spurious interpretations of extinction risk, which should be based only on process variability
 
